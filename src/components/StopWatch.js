@@ -10,6 +10,7 @@ class StopWatch extends Component {
     this.start = this.start.bind(this);
     this.pause = this.pause.bind(this);
     this.reset = this.reset.bind(this);
+    this.getTime = this.getTime.bind(this);
   }
 
   componentWillUnmount() {
@@ -36,6 +37,10 @@ class StopWatch extends Component {
     });
   }
 
+  getTime() {
+    return this.state.time;
+  }
+  
   formatTime(time) {
     let second = Math.floor(time / 1000);
     let centisec = Math.floor((time % 1000) /10);
